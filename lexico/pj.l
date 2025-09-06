@@ -3,7 +3,7 @@
     #include <stdlib.h>
     #include <string.h>
 
-    int linha = 1; // Contador de linhas
+    int linha = 1; 
 
     // Função para remover as aspas de strings e caracteres
     char* remover_aspas(char* s){
@@ -23,10 +23,9 @@
     }
 %}
 
-/* Estados */
 %x COMENTARIO_BLOCK
 
-/* Definições de Nomes Simbólicos */
+
 LETRA                 [a-zA-Z]
 DIGITO                [0-9]
 IDENTIFICADOR         {LETRA}({LETRA}|{DIGITO})*
@@ -49,7 +48,7 @@ CARACTERE_UNITARIO    '([^'\n])'
 <INITIAL>"/*"             { BEGIN(COMENTARIO_BLOCK); }
 <COMENTARIO_BLOCK>"*/"    { BEGIN(INITIAL); }
 <COMENTARIO_BLOCK>"\n"    { linha++; }
-<COMENTARIO_BLOCK>.       { /* Ignora tudo que não for o fim do comentário */ }
+<COMENTARIO_BLOCK>.       { }
 
 "begin"             { printf("KEYWORD: INICIO DE PROGRAMA\t%s\n", yytext); }
 "end"               { printf("KEYWORD: FIM DE PROGRAMA\t\t%s\n", yytext); }
@@ -82,7 +81,7 @@ CARACTERE_UNITARIO    '([^'\n])'
 {STRING}                {
     char *string_sem_aspas = remover_aspas(yytext);
     printf("LITERAL: STRING\t\t\t%s\n", string_sem_aspas);
-    free(string_sem_aspas); // Importante para evitar vazamento de memória
+    free(string_sem_aspas); 
 }
 {CARACTERE_UNITARIO}    {
     char *char_sem_apostrofo = remover_aspas(yytext);
@@ -100,12 +99,12 @@ CARACTERE_UNITARIO    '([^'\n])'
 %%
 
 int main() {
-    yyin = fopen("teste.pj", "r"); // abre o código fonte
+    yyin = fopen("teste.pj", "r"); 
     if (!yyin) {
         perror("Erro ao abrir arquivo");
         return 1;
     }
-    yylex();    // chama o analisador léxico
+    yylex(); 
     fclose(yyin);
     return 0;
 }
