@@ -1,0 +1,40 @@
+/* Este é um comentário de bloco
+que se estende por várias linhas.
+Ele deve ser ignorado pelo analisador. */
+
+begin
+
+    // Definição de variáveis
+    integer x = 10;
+    decimal y = 5.5;
+    text mensagem = "Olá, mundo!";
+    logical status = true;
+
+    // Estrutura de repetição
+    loop (x < 15) {
+        print("Valor de x: ");
+        print(x);
+        x = x + 1; // Incrementa x
+    }
+
+    // Estrutura condicional
+    if (x == 15 and status == true) {
+        print("A condição foi satisfeita.");
+    } else {
+        print("A condição não foi satisfeita.");
+    }
+
+    // Operações
+    decimal resultado = y * 2.0;
+    logical comparacao = (x > y); // Compara x e y
+    
+    // Leitura e impressão
+    print("Digite um valor: ");
+    read(y);
+    
+    print("O novo valor de y é: ");
+    print(y);
+    
+    return 0;
+
+end
