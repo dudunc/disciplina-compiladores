@@ -5,7 +5,7 @@
 
     int linha = 1; 
 
-    // Função para remover as aspas de strings e caracteres
+
     char* remover_aspas(char* s){
         int tam = strlen(s);
 
