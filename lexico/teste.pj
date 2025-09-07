@@ -1,40 +1,51 @@
-/* Este é um comentário de bloco
-que se estende por várias linhas.
-Ele deve ser ignorado pelo analisador. */
+/* Este é um bloco de comentário
+   para testar o estado COMENTARIO_BLOCK. */
 
 begin
+    integer a = 10;
+    float b = 25.5;
+    string nome = "Ana Paula";
+    bool status = true;
+    char inicial = 'A';
 
-    // Definição de variáveis
-    integer x = 10;
-    decimal y = 5.5;
-    text mensagem = "Olá, mundo!";
-    logical status = true;
+    // Este é um comentário de linha única.
+    
+    a = a + 5;
+    a++;
+    b /= 2.5;
 
-    // Estrutura de repetição
-    loop (x < 15) {
-        print("Valor de x: ");
-        print(x);
-        x = x + 1; // Incrementa x
-    }
-
-    // Estrutura condicional
-    if (x == 15 and status == true) {
-        print("A condição foi satisfeita.");
+    if (a >= b && status == false) {
+        print("a é maior ou igual a b.");
+    } elif (a < 100 or b != 2.5) {
+        read(nome);
     } else {
-        print("A condição não foi satisfeita.");
+        array integer vetor[5];
+    }
+    
+    for (integer i = 0; i < 10; i++) {
+        print(i);
     }
 
-    // Operações
-    decimal resultado = y * 2.0;
-    logical comparacao = (x > y); // Compara x e y
+    while (a-- > 0) {
+        do {
+            b *= 1.5;
+        } while (b < 50);
+    }
     
-    // Leitura e impressão
-    print("Digite um valor: ");
-    read(y);
-    
-    print("O novo valor de y é: ");
-    print(y);
-    
-    return 0;
+    switch(inicial) {
+        case 'A':
+            print("Inicial A");
+            break;
+        default:
+            print("Outra inicial");
+            break;
+    }
 
+    const integer MAX_VALUE = 1000;
+    
+    integer **p = &a;
+    **p = 200; 
+    **p->a = 50; 
+    
+    return a;
 end
