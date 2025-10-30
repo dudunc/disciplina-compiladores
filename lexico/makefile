@@ -1,5 +1,7 @@
 all: pj.l
 	clear
 	flex -i pj.l
-	gcc lex.yy.c -o pj -lfl
-	./pj
+	bison pj.y
+	gcc pj.tab.c -o pj -lfl
+	./pj teste.pj
+
