@@ -1,5 +1,10 @@
 begin
 
+//Teste comentário inline, sendo ignorado
+
+/*Teste comentário
+bloco, sendo ignorado*/
+
 escreva("--- Calculadora de Juros ---");
 escreva("Digite um valor real para o Capital:");
 

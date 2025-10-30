@@ -24,8 +24,8 @@
 %token INICIO FIM          
 %token LEIA ESCREVA        
 %token ATRIB               
-%token FUNCAO             
-// Tokens com valores de atributo
+%token FUNCAO          
+
 %token <real_value> NUMERO      
 %token <var_index> ID          
 %token <string_value> STRING   
@@ -52,24 +52,24 @@ lista_comandos: comando
 
 comando:  
     ID ATRIB EXPRESSAO ';' {
-        variables[$1] = $3; // Variável[índice] = resultado da expressão
+        variables[$1] = $3; 
     }
     
     | LEIA '(' ID ')' ';' {
         printf("ENTRADA: Digite o valor real para %c (Duas casas decimais sugeridas): ", 'a' + $3);
         if (scanf("%lf", &variables[$3]) != 1) {
             fprintf(stderr, "ERRO SEMANTICO: Entrada inválida. Esperado um número real.\n");
-            // Limpa o buffer de entrada para evitar loop de erro
+            
             while (getchar() != '\n'); 
         }
     }
     
     | ESCREVA '(' ID ')' ';' {
-        printf("SAIDA (%.2f): %.2f\n", variables[$3], variables[$3]); // Imprime com duas casas decimais
+        printf("SAIDA (%.2f): %.2f\n", variables[$3], variables[$3]); 
     }
     
     | ESCREVA '(' STRING ')' ';' {
-        printf("SAIDA (texto): %s\n", $3); // Imprime a string
+        printf("SAIDA (texto): %s\n", $3); 
     }
     
     | ';'
