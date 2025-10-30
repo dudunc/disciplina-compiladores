@@ -1,0 +1,28 @@
+begin
+
+escreva("--- Calculadora de Juros ---");
+escreva("Digite um valor real para o Capital:");
+
+leia(c);
+
+r = 0.05;
+t = 4.0;
+
+juros = c * r * t;
+montante = c + juros;
+
+teste_raiz = raiz(montante / 4.0);
+
+escreva("Capital Lido:");
+escreva(c);
+
+escreva("Juros Calculados:");
+escreva(juros);
+
+escreva("Montante Final:");
+escreva(montante);
+
+escreva("Resultado da Raiz:");
+escreva(teste_raiz);
+
+end
