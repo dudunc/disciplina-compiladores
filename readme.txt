@@ -1,0 +1,1 @@
+Simplifiquei o léxico, está diferente da versão anterior. Coloquei somente o necessário, para facilitar na hora de realizar o coding.
