@@ -1,33 +1,42 @@
 begin
+    s = 1; 
+    while (s > 0) {
+        escreva("--- MENU ---");
+        escreva("1 - Fibonacci com Arrays");
+        escreva("2 - Triangulos");
+        escreva("0 - Sair");
+        leia(s);
 
-//Teste comentário inline, sendo ignorado
+        if (s == 1) {
+            escreva("Quantos termos (max 100)?");
+            leia(n);
+            f[0] = 0;
+            f[1] = 1;
+            i = 2;
+            while (i < n) {
+                a = i - 1;
+                b = i - 2;
+                f[i] = f[a] + f[b];
+                i = i + 1;
+            }
+            j = 0;
+            while (j < n) {
+                escreva(f[j]);
+                j = j + 1;
+            }
+        }
 
-/*Teste comentário
-bloco, sendo ignorado*/
-
-escreva("--- Calculadora de Juros ---");
-escreva("Digite um valor real para o Capital:");
-
-leia(c);
-
-r = 0.05;
-t = 4.0;
-
-juros = c * r * t;
-montante = c + juros;
-
-teste_raiz = raiz(montante / 4.0);
-
-escreva("Capital Lido:");
-escreva(c);
-
-escreva("Juros Calculados:");
-escreva(juros);
-
-escreva("Montante Final:");
-escreva(montante);
-
-escreva("Resultado da Raiz:");
-escreva(teste_raiz);
-
+        if (s == 2) {
+            escreva("Lado A:"); leia(a);
+            escreva("Lado B:"); leia(b);
+            escreva("Lado C:"); leia(c);
+            if (a == b) {
+                if (b == c) { escreva("Equilatero"); }
+                else { escreva("Isosceles"); }
+            } else {
+                escreva("Escaleno");
+            }
+        }
+    escreva("Programa encerrado");
+    }
 end

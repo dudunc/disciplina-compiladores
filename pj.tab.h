@@ -58,12 +58,18 @@ extern int yydebug;
     FIM = 259,                     /* FIM  */
     LEIA = 260,                    /* LEIA  */
     ESCREVA = 261,                 /* ESCREVA  */
-    ATRIB = 262,                   /* ATRIB  */
-    FUNCAO = 263,                  /* FUNCAO  */
-    NUMERO = 264,                  /* NUMERO  */
-    ID = 265,                      /* ID  */
-    STRING = 266,                  /* STRING  */
-    RAIZ = 267                     /* RAIZ  */
+    RAIZ = 262,                    /* RAIZ  */
+    IF = 263,                      /* IF  */
+    ELSE = 264,                    /* ELSE  */
+    WHILE = 265,                   /* WHILE  */
+    NUMERO = 266,                  /* NUMERO  */
+    ID = 267,                      /* ID  */
+    STRING = 268,                  /* STRING  */
+    ATRIB = 269,                   /* ATRIB  */
+    IGUAL = 270,                   /* IGUAL  */
+    MAIOR = 271,                   /* MAIOR  */
+    MENOR = 272,                   /* MENOR  */
+    IFX = 273                      /* IFX  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -72,13 +78,14 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 18 "pj.y"
+#line 33 "pj.y"
 
     int var_index;
     double real_value;
     char string_value[256];
+    struct ast_node* node;
 
-#line 82 "pj.tab.h"
+#line 89 "pj.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
