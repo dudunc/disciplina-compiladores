@@ -37,6 +37,7 @@ begin
                 escreva("Escaleno");
             }
         }
-    escreva("Programa encerrado");
+    
     }
+    escreva("Programa encerrado");
 end
